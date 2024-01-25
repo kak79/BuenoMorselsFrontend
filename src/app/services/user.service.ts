@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../modules/user';
+import { User } from '../models/user';
 import { UrlService } from './url.service';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { UrlService } from './url.service';
 })
 export class UserService {
 
-  loggedInUser:User;
+  loggedInUser:User | undefined;
   authHeaders = {'Content-type':'application/json','Token':''};
   regHeaders = {'Content-type':'application/json'};
 
