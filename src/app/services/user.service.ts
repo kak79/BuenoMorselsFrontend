@@ -7,11 +7,21 @@ import { UrlService } from './url.service';
 })
 export class UserService {
 
-  loggedInUser:User | undefined;
+  loggedInUser:User;
   authHeaders = {'Content-type':'application/json','Token':''};
   regHeaders = {'Content-type':'application/json'};
 
   constructor(private url:UrlService) { }
+
+  async checkLogin() {
+    let token = localStorage.getItem('Token');
+    if (token) {
+      let resp = await fetch(this.url.url + 'users/' + token + '/auth');
+      if (resp.status===200) {
+        this.loggedInUser = await resp.json();
+      }
+    }
+  }
 
   async login(username:string,password:string): Promise<void> {
     let credentials = {
@@ -25,7 +35,12 @@ export class UserService {
 if (resp.status===200) {
   let token = await resp.json();
   localStorage.setItem('Token', token);
+  }
 }
+
+logOut(): void {
+  localStorage.clear();
+  this.loggedInUser = null;  //workaround in tsconfig.json
 }
 
 
