@@ -1,0 +1,35 @@
+
+#top{
+  padding: 2em;
+  height: 50%vw;
+  width: 80%vw;
+  border-width: 0.2rem;
+}
+
+.btn{
+  height: 3em;
+  width: 10em;
+  margin-left: 3em;
+}
+
+
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.bottom img {
+  width: 100%;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
