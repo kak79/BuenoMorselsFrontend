@@ -1,0 +1,37 @@
+
+#top{
+  padding: 2em;
+  height: 50%vw;
+  width: 80%vw;
+  border-width: 0.2rem;
+}
+
+.btn{
+  height: 3em;
+  width: 10em;
+  margin-left: 3em;
+}
+
+#bottom{
+  height: 800px;
+}
+
+.imag {
+  display: flex;
+  flex-direction: row;
+}
+
+#leftpic {
+  width: 300px;
+  height: auto;
+}
+
+#midpic {
+  width: 300px;
+  height: auto;
+}
+
+#rightpic {
+  width: 300px;
+  height: auto;
+}
